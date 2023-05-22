@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GunController : MonoBehaviour
 {
@@ -14,21 +15,32 @@ public class GunController : MonoBehaviour
     [SerializeField, Tooltip("Raycastの距離(射程距離)")]
     float _raycastDistance = 100f;
 
+    [SerializeField, Tooltip("BulletのGameObject")]
+    GameObject _bulletObj;
+
     private void Update()
     {
-        // 画面の中央に向けてRaycastを発射
-        Ray ray = new Ray(_muzzle.position, Vector2.zero);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, _raycastDistance))
         {
             // Raycastが何かに当たった場合、Crosshairの色を赤にする
             _crosshairImage.color = Color.red;
-            Debug.Log("射程圏内");
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                FireBullet();
+            }
         }
         else
         {
             // Raycastが何も当たらなかった場合、Crosshairの色を元の色に戻す
             _crosshairImage.color = Color.white;
         }
+    }
+
+    private void FireBullet()
+    {
+        Instantiate(_bulletObj, _muzzle.transform.position, Quaternion.identity, _muzzle);
     }
 }
