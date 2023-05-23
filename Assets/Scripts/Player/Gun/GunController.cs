@@ -41,6 +41,6 @@ public class GunController : MonoBehaviour
 
     private void FireBullet()
     {
-        Instantiate(_bulletObj, _muzzle.transform.position, Quaternion.identity, _muzzle);
+        Instantiate(_bulletObj, transform.position,Quaternion.identity, _muzzle);
     }
 }

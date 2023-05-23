@@ -8,19 +8,26 @@ public class Bullet : MonoBehaviour
     [SerializeField, Tooltip("íeÇÃê∂ë∂éûä‘")]
     float _lifeTime = 0.01f;
 
-    [Tooltip("ï€ë∂ÇµÇƒÇ®Ç≠ÇΩÇﬂÇÃScale")]
-    Vector3 _bulletScale;
+    [SerializeField, Tooltip("RayÇÃç≈ëÂãóó£")]
+    float _rayDistance = 100f;
+
+    [Tooltip("íeÇÃíÖíeínì_")]
+    Vector3 _bulletPos;
 
     private void Start()
     {
-        _bulletScale = transform.localScale;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        var hitPos = Physics.Raycast(ray, out hit, _rayDistance);
+        _bulletPos = hit.transform.position;
+        Debug.Log(hit.transform.position);
 
-        transform.DOMove(Vector3.forward * 100f, _lifeTime).OnComplete(DestroyBullet);
+        transform.DOMove(_bulletPos, _lifeTime).OnComplete(DestroyBullet);
     }
 
     private void DestroyBullet()
     {
-        this.gameObject.transform.localScale = _bulletScale;
+        this.gameObject.transform.localScale = _bulletPos;
         Destroy(this.gameObject);
     }
 }
