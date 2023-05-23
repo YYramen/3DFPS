@@ -5,6 +5,9 @@ using DG.Tweening;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField, Tooltip("íeë¨")]
+    float _bulletSpeed = 10f;
+
     [SerializeField, Tooltip("íeÇÃê∂ë∂éûä‘")]
     float _lifeTime = 0.01f;
 
@@ -33,7 +36,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        _rb.AddForce();
+        _rb.AddForce(Vector3.forward * _bulletSpeed);
     }
 
     private void DestroyBullet()
