@@ -14,15 +14,26 @@ public class Bullet : MonoBehaviour
     [Tooltip("’e‚Ì’…’e’n“_")]
     Vector3 _bulletPos;
 
+    Rigidbody _rb;
+
     private void Start()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        var hitPos = Physics.Raycast(ray, out hit, _rayDistance);
-        _bulletPos = hit.transform.position;
-        Debug.Log(hit.transform.position);
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //RaycastHit hit;
+        //var hitPos = Physics.Raycast(ray, out hit, _rayDistance);
+        //_bulletPos = hit.collider.transform.position;
+        //Debug.Log(hit.transform.position);
 
-        transform.DOMove(_bulletPos, _lifeTime).OnComplete(DestroyBullet);
+        //transform.DOMove(_bulletPos, _lifeTime).OnComplete(DestroyBullet);
+
+        _rb = GetComponent<Rigidbody>();
+
+        Destroy(this, _lifeTime);
+    }
+
+    private void Update()
+    {
+        _rb.AddForce();
     }
 
     private void DestroyBullet()
