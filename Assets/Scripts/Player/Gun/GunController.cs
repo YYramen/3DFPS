@@ -36,11 +36,16 @@ public class GunController : MonoBehaviour
         {
             // Raycast‚ª‰½‚à“–‚½‚ç‚È‚©‚Á‚½ê‡ACrosshair‚ÌF‚ğŒ³‚ÌF‚É–ß‚·
             _crosshairImage.color = Color.white;
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                FireBullet();
+            }
         }
     }
 
     private void FireBullet()
     {
-        Instantiate(_bulletObj, transform.position,Quaternion.identity, _muzzle);
+        Instantiate(_bulletObj, transform.position, Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
     }
 }
