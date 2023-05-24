@@ -17,42 +17,46 @@ public class GamePause : MonoBehaviour
     [Tooltip("ポーズフラグ")]
     bool _isPaused = false;
 
-    [Tooltip("ポーズ画面のインスタンス")]
-    GameObject _pausePanelInstance;
+    public bool IsPaused { get => _isPaused; }
 
-    public bool IsPaused { get => _isPaused;}
+    private void Start()
+    {
+        if(_isPaused == true)
+        {
+            _isPaused = false;
+        }
+    }
 
     private void Update()
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            if (_pausePanelInstance == null)
-            {
-                _pausePanelInstance = GameObject.Instantiate(_pausePanel, _pausePanelPos) as GameObject;
-                Time.timeScale = 0f;
-            }
-            else
-            {
-                Destroy(_pausePanelInstance);
-                Time.timeScale = 1f;
-            }
+            _isPaused = !_isPaused;
+        }
+
+        if (_isPaused == true)
+        {
+            PauseGame();
+        }
+        else if (_isPaused == false)
+        {
+            ResumeGame();
         }
     }
 
     public void ResumeGame()
     {
-        _isPaused = false;
-        Time.timeScale = 1;
-        Cursor.visible = true;
         _pausePanel.SetActive(false);
+        Cursor.visible = false;
+        Time.timeScale = 1;
     }
 
     public void PauseGame()
     {
-        _isPaused = true;
-        Time.timeScale = 0;
-        Cursor.visible = false;
         _pausePanel.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0;
     }
 }
 

@@ -1291,3 +1291,12 @@ MonoBehaviour:
   _sliderVertical: {fileID: 5047543397146797406}
   _maxHorizontalSens: 100
   _sliderHorizontal: {fileID: 8836930860458976455}
+  _action:
+    m_Name: Action
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 98f9aab1-859a-4fdc-b8a3-f596396b0275
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0

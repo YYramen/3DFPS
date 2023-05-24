@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Cinemachine;
+using UnityEngine.InputSystem;
 
 public class MouseSetting : MonoBehaviour
 {
@@ -24,27 +24,23 @@ public class MouseSetting : MonoBehaviour
     [SerializeField, Tooltip("横方向感度のSlider")]
     Slider _sliderHorizontal;
 
-    CinemachinePOV _cinemaChine;
+    [SerializeField, Tooltip("変更を加えるInputSystemコンポーネント")]
+    InputAction _action;
 
     private void Start()
     {
-        _cinemaChine = GetComponent<CinemachinePOV>();
-
-        _sliderVertical = GetComponent<Slider>();
-        _sliderHorizontal = GetComponent<Slider>();
-
-        _sliderVertical.maxValue = _maxVerticalSens;
-        _sliderVertical.value = _currentVerticalSens;
-        _sliderHorizontal.maxValue = _maxHorizontalSens;
-        _sliderHorizontal.value = _currentHorizontalSens;
+        //_sliderVertical.maxValue =  1 % _maxVerticalSens;
+        //_sliderHorizontal.maxValue =  1 % _maxHorizontalSens;
     }
 
     private void Update()
     {
-        _currentVerticalSens = (int)_cinemaChine.m_VerticalAxis.m_SpeedMode;
-        _currentHorizontalSens = (int)_cinemaChine.m_HorizontalAxis.m_SpeedMode;
-
         _sliderVertical.value = _currentVerticalSens;
         _sliderHorizontal.value = _currentHorizontalSens;
+        _sliderVertical.maxValue = 1 % _maxVerticalSens;
+        _sliderHorizontal.maxValue = 1 % _maxHorizontalSens;
+
+        //_action.ChangeBinding(1)
+        //    .WithProcessor($"ScaleVector2(factor = {_currentVerticalSens})");
     }
 }
