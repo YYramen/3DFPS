@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh37924
+  m_Name: pb_Mesh26172
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -347,15 +347,15 @@ MonoBehaviour:
   m_RecenterTarget: 1
   m_VerticalAxis:
     Value: 0
-    m_SpeedMode: 0
-    m_MaxSpeed: 400
+    m_SpeedMode: 1
+    m_MaxSpeed: 1
     m_AccelTime: 0
     m_DecelTime: 0
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
     m_InvertInput: 1
-    m_MinValue: -60
-    m_MaxValue: 30
+    m_MinValue: -90
+    m_MaxValue: 90
     m_Wrap: 0
     m_Recentering:
       m_enabled: 0
@@ -371,8 +371,8 @@ MonoBehaviour:
     m_LegacyVelocityFilterStrength: -1
   m_HorizontalAxis:
     Value: 0
-    m_SpeedMode: 0
-    m_MaxSpeed: 400
+    m_SpeedMode: 1
+    m_MaxSpeed: 1
     m_AccelTime: 0
     m_DecelTime: 0
     m_InputAxisName: Mouse X
@@ -394,6 +394,37 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_ApplyBeforeBody: 0
+--- !u!1 &128016018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 128016019}
+  m_Layer: 0
+  m_Name: InputSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &128016019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128016018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &372405750
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +774,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh37958
+  m_Name: pb_Mesh26208
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1106,6 +1137,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9218034659024628148, guid: b527c535cec6b64419dd3b23154ecb9d, type: 3}
   m_PrefabInstance: {fileID: 1361561389}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1049571830 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5651185998521451680, guid: b527c535cec6b64419dd3b23154ecb9d, type: 3}
+  m_PrefabInstance: {fileID: 1361561389}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049571828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e112d11639f0b40a193d03cdc7f077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1087961127
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,22 +2566,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1403193017}
     m_Modifications:
-    - target: {fileID: 1052351741301289452, guid: b527c535cec6b64419dd3b23154ecb9d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2578534415132433440, guid: b527c535cec6b64419dd3b23154ecb9d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5923309962094094408, guid: b527c535cec6b64419dd3b23154ecb9d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6629506049790936478, guid: b527c535cec6b64419dd3b23154ecb9d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 5651185998521451680, guid: b527c535cec6b64419dd3b23154ecb9d, type: 3}
+      propertyPath: _cvcObj
+      value: 
+      objectReference: {fileID: 526031620}
     - target: {fileID: 9218034659024628145, guid: b527c535cec6b64419dd3b23154ecb9d, type: 3}
       propertyPath: m_Name
       value: PausePanel
@@ -2748,6 +2778,7 @@ MonoBehaviour:
   _pausePanel: {fileID: 1049571828}
   _crosshairImage: {fileID: 938779161}
   _pausePanelPos: {fileID: 1403193017}
+  _mouseSetting: {fileID: 1049571830}
 --- !u!1 &1415082867
 GameObject:
   m_ObjectHideFlags: 0

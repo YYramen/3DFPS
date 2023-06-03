@@ -7,6 +7,9 @@ public class PlayerMove : MonoBehaviour
     [SerializeField, Tooltip("プレイヤーの移動速度")]
     float _moveSpeed = 5f;
 
+    //[SerializeField, Header("テスト用")]
+    //Gameobject
+
     private Rigidbody _rb;
     private float _horizontalInput;
     private float _verticalInput;
@@ -30,5 +33,10 @@ public class PlayerMove : MonoBehaviour
 
         // 移動方向にスピードを掛ける。ジャンプや落下がある場合は、別途Y軸方向の速度ベクトルを足す。
         _rb.velocity = moveForward * _moveSpeed + new Vector3(0, _rb.velocity.y, 0);
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+
+        }
     }
 }

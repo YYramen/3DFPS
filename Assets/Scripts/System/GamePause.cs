@@ -17,6 +17,8 @@ public class GamePause : MonoBehaviour
     [Tooltip("ポーズフラグ")]
     bool _isPaused = false;
 
+    [SerializeField] MouseSetting _mouseSetting;
+
     public bool IsPaused { get => _isPaused; }
 
     private void Start()
@@ -32,20 +34,20 @@ public class GamePause : MonoBehaviour
         if (Input.GetButtonDown("Cancel"))
         {
             _isPaused = !_isPaused;
-        }
-
-        if (_isPaused == true)
-        {
-            PauseGame();
-        }
-        else if (_isPaused == false)
-        {
-            ResumeGame();
+            if(_isPaused)
+            {
+                PauseGame();
+            }
+            else
+            {
+                ResumeGame();
+            }
         }
     }
 
     public void ResumeGame()
     {
+        _mouseSetting.SetSens();
         _pausePanel.SetActive(false);
         Cursor.visible = false;
         Time.timeScale = 1;

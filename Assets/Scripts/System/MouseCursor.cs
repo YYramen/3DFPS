@@ -6,6 +6,6 @@ public class MouseCursor : MonoBehaviour
 {
     private void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 }
