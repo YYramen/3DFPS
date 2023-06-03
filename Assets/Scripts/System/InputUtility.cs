@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputUtility
+public class InputManager
 {
-    static public InputUtility Instance = new InputUtility();
+    static public InputManager Instance = new InputManager();
 
     public bool OpenSettingsInput;
 
