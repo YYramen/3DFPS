@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class GunController : MonoBehaviour
 {
@@ -18,6 +20,29 @@ public class GunController : MonoBehaviour
     [SerializeField, Tooltip("BulletのGameObject")]
     GameObject _bulletObj;
 
+    [Header("参照用")]
+    [SerializeField] PlayerInput _playerInput;
+
+    private void OnEnable()
+    {
+        _playerInput.onActionTriggered += OnMove;
+    }
+
+    private void OnDisable()
+    {
+        _playerInput.onActionTriggered -= OnMove;
+    }
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        if(context.action.name != "Fire")
+        {
+            return;
+        }
+
+        FireBullet();
+    }
+
     private void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -26,21 +51,11 @@ public class GunController : MonoBehaviour
         {
             // Raycastが何かに当たった場合、Crosshairの色を赤にする
             _crosshairImage.color = Color.red;
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                FireBullet();
-            }
         }
         else
         {
             // Raycastが何も当たらなかった場合、Crosshairの色を元の色に戻す
             _crosshairImage.color = Color.white;
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                FireBullet();
-            }
         }
     }
 

@@ -11,9 +11,6 @@ public class Bullet : MonoBehaviour
     [SerializeField, Tooltip("’e‚Ì¶‘¶ŠÔ")]
     float _lifeTime = 0.01f;
 
-    [SerializeField, Tooltip("Ray‚ÌÅ‘å‹——£")]
-    float _rayDistance = 100f;
-
     Rigidbody _rb;
 
     private void Start()
