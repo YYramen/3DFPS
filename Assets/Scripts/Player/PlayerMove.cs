@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField, Tooltip("プレイヤーの移動速度")]
+    [SerializeField, Header("プレイヤーの移動速度")]
     float _moveSpeed = 5f;
 
     //[SerializeField, Header("テスト用")]

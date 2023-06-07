@@ -8,16 +8,16 @@ using Unity.VisualScripting;
 
 public class GunController : MonoBehaviour
 {
-    [SerializeField, Tooltip("Muzzleの位置")]
+    [SerializeField, Header("Muzzleの位置")]
     Transform _muzzle;
 
-    [SerializeField, Tooltip("Crosshairのイメージ")]
+    [SerializeField, Header("Crosshairのイメージ")]
     Image _crosshairImage;
 
-    [SerializeField, Tooltip("Raycastの距離(射程距離)")]
+    [SerializeField, Header("Raycastの距離(射程距離)")]
     float _raycastDistance = 100f;
 
-    [SerializeField, Tooltip("BulletのGameObject")]
+    [SerializeField, Header("BulletのGameObject")]
     GameObject _bulletObj;
 
     [Header("参照用")]

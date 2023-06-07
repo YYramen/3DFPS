@@ -7,28 +7,28 @@ using Cinemachine;
 
 public class MouseSetting : MonoBehaviour
 {
-    [SerializeField, Tooltip("マウス感度(縦方向)の最大値")]
+    [SerializeField, Header("マウス感度(縦方向)の最大値")]
     float _maxVerticalSens = 1;
 
-    [SerializeField, Tooltip("マウス感度(縦方向)の最小値")]
+    [SerializeField, Header("マウス感度(縦方向)の最小値")]
     float _minVerticalSens = 0.01f;
 
     [Tooltip("現在のマウス感度(縦)")]
     float _currentVerticalSens;
 
-    [SerializeField, Tooltip("縦方向感度のSlider")]
+    [SerializeField, Header("縦方向感度のSlider")]
     Slider _sliderVertical;
 
-    [SerializeField, Tooltip("マウス感度(横方向)の最大値")]
+    [SerializeField, Header("マウス感度(横方向)の最大値")]
     float _maxHorizontalSens = 1;
 
-    [SerializeField, Tooltip("マウス感度(横方向)の最小値")]
+    [SerializeField, Header("マウス感度(横方向)の最小値")]
     float _minHorizontalSens = 0.01f;
 
     [Tooltip("現在のマウス感度(横)")]
     float _currentHorizontalSens;
 
-    [SerializeField, Tooltip("横方向感度のSlider")]
+    [SerializeField, Header("横方向感度のSlider")]
     Slider _sliderHorizontal;
 
     [SerializeField, Header("cvcが入っているオブジェクト")]

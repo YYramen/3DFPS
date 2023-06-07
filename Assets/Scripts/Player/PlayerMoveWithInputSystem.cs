@@ -6,11 +6,9 @@ using static UnityEngine.EventSystems.StandaloneInputModule;
 
 public class PlayerMoveWithInputSystem : MonoBehaviour
 {
-    [Header("移動速度")]
-    [SerializeField] float _moveSpeed;
+    [SerializeField, Header("移動速度")] float _moveSpeed;
 
-    [Header("参照用")]
-    [SerializeField] PlayerInput _playerInput;
+    [SerializeField, Header("参照用")] PlayerInput _playerInput;
 
     Rigidbody _rb;
     Vector3 _movement;

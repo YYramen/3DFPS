@@ -5,10 +5,10 @@ using DG.Tweening;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField, Tooltip("’e‘¬")]
+    [SerializeField, Header("’e‘¬")]
     float _bulletSpeed = 10f;
 
-    [SerializeField, Tooltip("’e‚Ì¶‘¶ŠÔ")]
+    [SerializeField, Header("’e‚Ì¶‘¶ŠÔ")]
     float _lifeTime = 0.01f;
 
     Rigidbody _rb;

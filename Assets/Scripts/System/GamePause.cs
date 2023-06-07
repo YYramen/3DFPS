@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class GamePause : MonoBehaviour
 {
-    [SerializeField, Tooltip("ポーズ中に表示するPanel")]
+    [SerializeField, Header("ポーズ中に表示するPanel")]
     GameObject _pausePanel;
 
-    [SerializeField, Tooltip("ポーズ中に非表示にするCrosshair")]
+    [SerializeField, Header("ポーズ中に非表示にするCrosshair")]
     Image _crosshairImage;
 
-    [SerializeField, Tooltip("ポーズパネルを配置する場所")]
+    [SerializeField, Header("ポーズパネルを配置する場所")]
     Transform _pausePanelPos;
 
     [Tooltip("ポーズフラグ")]
     bool _isPaused = false;
 
-    [SerializeField] MouseSetting _mouseSetting;
+    [SerializeField, Header("MouseSetting が入っているオブジェクト")] MouseSetting _mouseSetting;
 
     public bool IsPaused { get => _isPaused; }
 
