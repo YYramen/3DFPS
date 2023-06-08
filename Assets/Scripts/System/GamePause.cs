@@ -8,16 +8,17 @@ public class GamePause : MonoBehaviour
     [SerializeField, Header("ポーズ中に表示するPanel")]
     GameObject _pausePanel;
 
+    [SerializeField, Header("Settingsオブジェクト")]
+    GameObject _settingsObj;
+
     [SerializeField, Header("ポーズ中に非表示にするCrosshair")]
     Image _crosshairImage;
 
-    [SerializeField, Header("ポーズパネルを配置する場所")]
-    Transform _pausePanelPos;
+    [SerializeField, Header("パネルを配置する場所")]
+    Transform _panelPos;
 
     [Tooltip("ポーズフラグ")]
     bool _isPaused = false;
-
-    [SerializeField, Header("MouseSetting が入っているオブジェクト")] MouseSetting _mouseSetting;
 
     public bool IsPaused { get => _isPaused; }
 
@@ -47,7 +48,6 @@ public class GamePause : MonoBehaviour
 
     public void ResumeGame()
     {
-        _mouseSetting.SetSens();
         _pausePanel.SetActive(false);
         Cursor.visible = false;
         Time.timeScale = 1;
@@ -55,6 +55,24 @@ public class GamePause : MonoBehaviour
 
     public void PauseGame()
     {
+        _pausePanel.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0;
+    }
+
+    public void GoToSettings()
+    {
+        _pausePanel.SetActive(false);
+        _settingsObj.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0;
+    }
+
+    public void ReturnToMainMenu()
+    {
+        _settingsObj.SetActive(false);
         _pausePanel.SetActive(true);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;

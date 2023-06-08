@@ -56,5 +56,7 @@ public class MouseSetting : MonoBehaviour
 
         _cpov.m_HorizontalAxis.m_MaxSpeed = _currentHorizontalSens;
         _cpov.m_VerticalAxis.m_MaxSpeed = _currentVerticalSens;
+
+        Debug.Log("ä¥ìxê›íËÇï€ë∂ÇµÇ‹ÇµÇΩ");
     }
 }
