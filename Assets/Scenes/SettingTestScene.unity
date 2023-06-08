@@ -1672,6 +1672,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3667245056355565226, guid: d91c4ef1872543942b3abe0222b31e0c, type: 3}
+      propertyPath: _scheme
+      value: Keyboard
+      objectReference: {fileID: 0}
     - target: {fileID: 3813761938693740330, guid: d91c4ef1872543942b3abe0222b31e0c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1683,6 +1687,10 @@ PrefabInstance:
     - target: {fileID: 3813761938693740330, guid: d91c4ef1872543942b3abe0222b31e0c, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5362202471583560922, guid: d91c4ef1872543942b3abe0222b31e0c, type: 3}
+      propertyPath: _scheme
+      value: Keyboard
       objectReference: {fileID: 0}
     - target: {fileID: 5617618439445161655, guid: d91c4ef1872543942b3abe0222b31e0c, type: 3}
       propertyPath: m_AnchorMax.y
