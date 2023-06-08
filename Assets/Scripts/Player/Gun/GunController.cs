@@ -46,8 +46,7 @@ public class GunController : MonoBehaviour
     private void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, _raycastDistance))
+        if (Physics.Raycast(ray, _raycastDistance))
         {
             // Raycast‚ª‰½‚©‚É“–‚½‚Á‚½ê‡ACrosshair‚ÌF‚ğÔ‚É‚·‚é
             _crosshairImage.color = Color.red;

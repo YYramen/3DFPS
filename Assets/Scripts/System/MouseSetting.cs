@@ -31,7 +31,7 @@ public class MouseSetting : MonoBehaviour
     [SerializeField, Header("横方向感度のSlider")]
     Slider _sliderHorizontal;
 
-    [SerializeField, Header("cvcが入っているオブジェクト")]
+    [SerializeField, Header("VirtualCameraが入っているオブジェクト")]
     GameObject _cvcObj;
 
     CinemachinePOV _cpov;
