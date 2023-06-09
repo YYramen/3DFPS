@@ -4,24 +4,19 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 
-public class RebindInput : MonoBehaviour
+public class RebindCompositInput : MonoBehaviour
 {
-    // リバインド対象のAction
-    [SerializeField] private InputActionReference _actionRef;
+    [SerializeField, Header("リバインド対象のAction")] private InputActionReference _actionRef;
 
-    // リバインド対象のScheme
-    [SerializeField] private string _scheme = "KeyboardMouse";
+    [SerializeField, Header("リバインド対象のScheme")] private string _scheme = "KeyboardMouse";
 
-    // 現在のBindingのパスを表示するテキスト
-    [SerializeField] private TMP_Text _pathText;
+    [SerializeField, Header("現在のBindを表示するテキスト")] private TMP_Text _pathText;
 
-    // リバインド中のマスク用オブジェクト
-    [SerializeField] private GameObject _mask;
+    [SerializeField, Header("リバインド中のマスク用オブジェクト")] private GameObject _mask;
 
     private InputAction _action;
     private InputActionRebindingExtensions.RebindingOperation _rebindOperation;
 
-    // 初期化
     private void Awake()
     {
         if (_actionRef == null) return;
@@ -33,7 +28,6 @@ public class RebindInput : MonoBehaviour
         RefreshDisplay();
     }
 
-    // 後処理
     private void OnDestroy()
     {
         // オペレーションは必ず破棄する必要がある
@@ -110,9 +104,9 @@ public class RebindInput : MonoBehaviour
                 RefreshDisplay();
 
                 var bindings = _action.bindings;
-                var nextBindingIndex = bindingIndex + 1;
+                var nextBindingIndex = bindingIndex - 1;
 
-                if (nextBindingIndex <= bindings.Count - 1 && bindings[nextBindingIndex].isPartOfComposite)
+                if (nextBindingIndex <= bindings.Count + 1 && bindings[nextBindingIndex].isPartOfComposite)
                 {
                     // Composite Bindingの一部なら、次のBindingのリバインドを開始する
                     OnFinished(false);
@@ -128,8 +122,8 @@ public class RebindInput : MonoBehaviour
                 // リバインドがキャンセルされた時の処理
                 OnFinished();
             })
-            .OnMatchWaitForAnother(0.2f) // 次のリバインドまでの待機時間を設ける
-            .WithCancelingThrough("<KeyboardMouse>/escape")
+            .OnMatchWaitForAnother(0.5f) // 次のリバインドまでの待機時間
+            .WithCancelingThrough("<Keyboard>/escape")
             .Start(); // ここでリバインドを開始する
     }
 

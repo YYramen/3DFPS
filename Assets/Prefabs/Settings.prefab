@@ -945,7 +945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionRef: {fileID: -6946748907502258375, guid: 8dfbfd6f69aee914cb8f41ad83a7c62a, type: 3}
-  _scheme: Keyboard
+  _scheme: Keyboard&Mouse
   _pathText: {fileID: 4599904548300195730}
   _mask: {fileID: 1779342013083774340}
 --- !u!1 &1757404167977502198
@@ -1417,7 +1417,7 @@ GameObject:
   - component: {fileID: 4023668020445035513}
   - component: {fileID: 7540435109110548142}
   m_Layer: 5
-  m_Name: Scroll View
+  m_Name: Settings Scroll View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2292,10 +2292,10 @@ RectTransform:
   m_Father: {fileID: 2981532226149090490}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 173}
-  m_SizeDelta: {x: -1384, y: -1166}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3667245056355565226
 MonoBehaviour:
@@ -2310,7 +2310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actionRef: {fileID: -6398109281547300712, guid: 8dfbfd6f69aee914cb8f41ad83a7c62a, type: 3}
-  _scheme: Keyboard
+  _scheme: Keyboard&Mouse
   _pathText: {fileID: 5457452894796173785}
   _mask: {fileID: 1779342013083774340}
 --- !u!1 &5254718143906028241
