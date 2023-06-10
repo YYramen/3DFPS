@@ -100,13 +100,13 @@ public class RebindCompositInput : MonoBehaviour
             .PerformInteractiveRebinding(bindingIndex)
             .OnComplete(_ =>
             {
-                // リバインドが完了した時の処理
+                //// リバインドが完了した時の処理
                 RefreshDisplay();
 
                 var bindings = _action.bindings;
-                var nextBindingIndex = bindingIndex - 1;
+                var nextBindingIndex = bindingIndex + 1;
 
-                if (nextBindingIndex <= bindings.Count + 1 && bindings[nextBindingIndex].isPartOfComposite)
+                if (nextBindingIndex <= bindings.Count - 1 && bindings[nextBindingIndex].isPartOfComposite)
                 {
                     // Composite Bindingの一部なら、次のBindingのリバインドを開始する
                     OnFinished(false);
