@@ -6957,7 +6957,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 798
+  m_VersionIndex: 807
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8385,7 +8385,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 263
+  m_VersionIndex: 272
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8403,8 +8403,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _muzzle: {fileID: 2453064818828187539}
-  _crosshairImage: {fileID: 0}
-  _raycastDistance: 100
   _grapBulletObj: {fileID: 3427737933391237607, guid: 2b267cfdf3fe9c5489098824b7ac115a, type: 3}
   _playerInput: {fileID: 0}
 --- !u!114 &1635622815
@@ -8420,8 +8418,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _muzzle: {fileID: 2453064818828187539}
-  _crosshairImage: {fileID: 0}
-  _raycastDistance: 100
   _pullBulletObj: {fileID: 3427737933391237607, guid: 17e84ff80b6570b479c813fac6c2fb26, type: 3}
   _playerInput: {fileID: 0}
 --- !u!1 &2453064819785219843
