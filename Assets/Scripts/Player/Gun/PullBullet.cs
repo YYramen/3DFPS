@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
-public class Bullet : MonoBehaviour
+public class PullBullet : MonoBehaviour
 {
     [SerializeField, Header("’e‘¬")]
     float _bulletSpeed = 10f;

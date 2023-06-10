@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 using UnityEngine.InputSystem;
-using Unity.VisualScripting;
 
-public class GunController : MonoBehaviour
+public class GrapGunController : MonoBehaviour
 {
     [SerializeField, Header("MuzzleÇÃà íu")]
     Transform _muzzle;
@@ -17,8 +15,8 @@ public class GunController : MonoBehaviour
     [SerializeField, Header("RaycastÇÃãóó£(éÀíˆãóó£)")]
     float _raycastDistance = 100f;
 
-    [SerializeField, Header("BulletÇÃGameObject")]
-    GameObject _bulletObj;
+    [SerializeField, Header("GrapBulletÇÃGameObject")]
+    GameObject _grapBulletObj;
 
     [Header("éQè∆óp")]
     [SerializeField] PlayerInput _playerInput;
@@ -35,12 +33,15 @@ public class GunController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if(context.action.name != "Fire")
+        if (context.action.name != "Fire")
         {
             return;
         }
 
-        FireBullet();
+        if (context.performed)
+        {
+            FireGrapBullet();
+        }
     }
 
     private void Update()
@@ -58,8 +59,8 @@ public class GunController : MonoBehaviour
         }
     }
 
-    private void FireBullet()
+    private void FireGrapBullet()
     {
-        Instantiate(_bulletObj, transform.position, Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
+        Instantiate(_grapBulletObj, transform.position, Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
     }
 }
