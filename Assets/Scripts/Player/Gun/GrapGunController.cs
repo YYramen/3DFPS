@@ -9,12 +9,6 @@ public class GrapGunController : MonoBehaviour
     [SerializeField, Header("Muzzleの位置")]
     Transform _muzzle;
 
-    [SerializeField, Header("Crosshairのイメージ")]
-    Image _crosshairImage;
-
-    [SerializeField, Header("Raycastの距離(射程距離)")]
-    float _raycastDistance = 100f;
-
     [SerializeField, Header("GrapBulletのGameObject")]
     GameObject _grapBulletObj;
 
@@ -41,26 +35,6 @@ public class GrapGunController : MonoBehaviour
         if (context.performed)
         {
             FireGrapBullet();
-        }
-    }
-
-    private void Update()
-    {
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, _raycastDistance, LayerMask.GetMask("GrapObject")))
-        {
-            _crosshairImage.color = Color.blue;
-        }
-        else if ((Physics.Raycast(ray, out hit, _raycastDistance, LayerMask.GetMask("PullObject"))))
-        {
-            _crosshairImage.color = Color.red;
-        }
-        else
-        {
-            _crosshairImage.color = Color.white;
         }
     }
 

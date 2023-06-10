@@ -9,12 +9,6 @@ public class PullGunController : MonoBehaviour
     [SerializeField, Header("Muzzleの位置")]
     Transform _muzzle;
 
-    [SerializeField, Header("Crosshairのイメージ")]
-    Image _crosshairImage;
-
-    [SerializeField, Header("Raycastの距離(射程距離)")]
-    float _raycastDistance = 100f;
-
     [SerializeField, Header("PullBulletのGameObject")]
     GameObject _pullBulletObj;
 
@@ -41,21 +35,6 @@ public class PullGunController : MonoBehaviour
         if (context.performed)
         {
             FirePullBullet();
-        }
-    }
-
-    private void Update()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, _raycastDistance))
-        {
-            // Raycastが何かに当たった場合、Crosshairの色を赤にする
-            _crosshairImage.color = Color.red;
-        }
-        else
-        {
-            // Raycastが何も当たらなかった場合、Crosshairの色を元の色に戻す
-            _crosshairImage.color = Color.white;
         }
     }
 

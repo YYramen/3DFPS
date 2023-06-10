@@ -759,6 +759,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c405a31189c8e84d9ef13d52c6cd540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _raycastDistance: 100
+  _crosshairImage: {fileID: 938779161}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,7 +1097,7 @@ GameObject:
   - component: {fileID: 1560573842}
   - component: {fileID: 1560573843}
   m_Layer: 6
-  m_Name: Cube
+  m_Name: GrapCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1239,7 +1241,7 @@ PrefabInstance:
       objectReference: {fileID: 91094607}
     - target: {fileID: 2453064818560391027, guid: 41ee22c9f979889428f6facb02793887, type: 3}
       propertyPath: m_VersionIndex
-      value: 801
+      value: 807
       objectReference: {fileID: 0}
     - target: {fileID: 2453064818690143133, guid: 41ee22c9f979889428f6facb02793887, type: 3}
       propertyPath: m_RootOrder
@@ -1307,7 +1309,7 @@ PrefabInstance:
       objectReference: {fileID: 1814487139}
     - target: {fileID: 2453064818904292398, guid: 41ee22c9f979889428f6facb02793887, type: 3}
       propertyPath: m_VersionIndex
-      value: 266
+      value: 272
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41ee22c9f979889428f6facb02793887, type: 3}
@@ -1490,7 +1492,7 @@ GameObject:
   - component: {fileID: 1895836231}
   - component: {fileID: 1895836235}
   m_Layer: 8
-  m_Name: Cube3
+  m_Name: NobalCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1620,7 +1622,7 @@ GameObject:
   - component: {fileID: 1932416258}
   - component: {fileID: 1932416262}
   m_Layer: 7
-  m_Name: Cube2
+  m_Name: PullCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
