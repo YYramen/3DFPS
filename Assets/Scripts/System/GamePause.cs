@@ -44,20 +44,19 @@ public class GamePause : MonoBehaviour
                 ResumeGame();
             }
         }
+
+        //Cursor.visible = _isPaused;
     }
 
     public void ResumeGame()
     {
         _pausePanel.SetActive(false);
-        Cursor.visible = false;
         Time.timeScale = 1;
     }
 
     public void PauseGame()
     {
         _pausePanel.SetActive(true);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
     }
 
@@ -65,8 +64,6 @@ public class GamePause : MonoBehaviour
     {
         _pausePanel.SetActive(false);
         _settingsObj.SetActive(true);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
     }
 
@@ -74,8 +71,6 @@ public class GamePause : MonoBehaviour
     {
         _settingsObj.SetActive(false);
         _pausePanel.SetActive(true);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
     }
 }

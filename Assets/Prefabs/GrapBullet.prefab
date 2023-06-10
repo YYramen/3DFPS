@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9088385222762042996}
   - component: {fileID: -1890809733481317767}
   - component: {fileID: -8992639101258133785}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GrapBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3427737933391237607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,7 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletSpeed: 1000
   _lifeTime: 0.5
-  _rayDistance: 100
 --- !u!96 &-1890809733481317767
 TrailRenderer:
   serializedVersion: 2

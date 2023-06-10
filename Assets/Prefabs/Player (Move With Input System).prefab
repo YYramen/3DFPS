@@ -6957,7 +6957,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 795
+  m_VersionIndex: 798
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7097,15 +7097,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2453064818904292384}
-  m_LocalRotation: {x: -0, y: 0.10703738, z: -0, w: 0.994255}
-  m_LocalPosition: {x: 1.2588117, y: -0.5408095, z: 0.5163038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.43, z: 0.5163038}
   m_LocalScale: {x: 0.3390318, y: 0.28463653, z: 0.2763318}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2453064818828187539}
   m_Father: {fileID: 2453064819785219842}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 12.289, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2453064818904292396
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8385,7 +8385,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 260
+  m_VersionIndex: 263
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8405,7 +8405,7 @@ MonoBehaviour:
   _muzzle: {fileID: 2453064818828187539}
   _crosshairImage: {fileID: 0}
   _raycastDistance: 100
-  _grapBulletObj: {fileID: 3427737933391237607, guid: 17e84ff80b6570b479c813fac6c2fb26, type: 3}
+  _grapBulletObj: {fileID: 3427737933391237607, guid: 2b267cfdf3fe9c5489098824b7ac115a, type: 3}
   _playerInput: {fileID: 0}
 --- !u!114 &1635622815
 MonoBehaviour:
@@ -8450,7 +8450,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2453064819785219843}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.8800001, z: 0.24}
+  m_LocalPosition: {x: 0, y: 1.98, z: 0.24}
   m_LocalScale: {x: 0.5899152, y: 0.70265055, z: 1.8094196}
   m_ConstrainProportionsScale: 0
   m_Children:

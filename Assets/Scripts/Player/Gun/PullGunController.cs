@@ -61,6 +61,8 @@ public class PullGunController : MonoBehaviour
 
     private void FirePullBullet()
     {
-        Instantiate(_pullBulletObj, transform.position, Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
+        Debug.Log("Pullgun fired");
+        Instantiate(_pullBulletObj, transform.position,
+            Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
     }
 }

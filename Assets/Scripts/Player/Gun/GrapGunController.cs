@@ -46,21 +46,28 @@ public class GrapGunController : MonoBehaviour
 
     private void Update()
     {
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, _raycastDistance))
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, _raycastDistance, LayerMask.GetMask("GrapObject")))
         {
-            // Raycastが何かに当たった場合、Crosshairの色を赤にする
+            _crosshairImage.color = Color.blue;
+        }
+        else if ((Physics.Raycast(ray, out hit, _raycastDistance, LayerMask.GetMask("PullObject"))))
+        {
             _crosshairImage.color = Color.red;
         }
         else
         {
-            // Raycastが何も当たらなかった場合、Crosshairの色を元の色に戻す
             _crosshairImage.color = Color.white;
         }
     }
 
     private void FireGrapBullet()
     {
-        Instantiate(_grapBulletObj, transform.position, Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
+        Debug.Log("Grapgun fired");
+        Instantiate(_grapBulletObj, transform.position,
+            Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
     }
 }
