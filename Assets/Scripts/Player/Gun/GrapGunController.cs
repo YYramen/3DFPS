@@ -12,20 +12,33 @@ public class GrapGunController : MonoBehaviour
     [SerializeField, Header("GrapBulletÇÃGameObject")]
     GameObject _grapBulletObj;
 
+    [SerializeField, Header("GrapGunÇÃç≈ëÂéÀíˆ")]
+    float _grapGunRange = 50f;
+
+    [SerializeField, Header("GrapGunÇÃà¯Ç¡í£ÇÈóÕ")]
+    float _grapPower;
+
+    Rigidbody _rb;
+
     [Header("éQè∆óp")]
     [SerializeField] PlayerInput _playerInput;
 
+    private void Start()
+    {
+        _rb = GetComponentInParent<Rigidbody>();
+    }
+
     private void OnEnable()
     {
-        _playerInput.onActionTriggered += OnMove;
+        _playerInput.onActionTriggered += OnHold;
     }
 
     private void OnDisable()
     {
-        _playerInput.onActionTriggered -= OnMove;
+        _playerInput.onActionTriggered -= OnHold;
     }
 
-    public void OnMove(InputAction.CallbackContext context)
+    public void OnHold(InputAction.CallbackContext context)
     {
         if (context.action.name != "Fire")
         {
@@ -43,5 +56,20 @@ public class GrapGunController : MonoBehaviour
         Debug.Log("Grapgun fired");
         Instantiate(_grapBulletObj, transform.position,
             Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, _grapGunRange, LayerMask.GetMask("GrapObject")))
+        {
+            var dir = (hit.transform.position - this.transform.position).normalized; ;
+            _rb.AddForce(dir * _grapPower, ForceMode.Impulse);
+
+            Debug.Log("Grapê¨å˜");
+        }
+        else
+        {
+            return;
+        }
     }
 }

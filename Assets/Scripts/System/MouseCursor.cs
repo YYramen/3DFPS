@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MouseCursor : MonoBehaviour
 {
-    [SerializeField, Header("Raycast‚ÌRange")] float _raycastDistance = 100f;
+    [SerializeField, Header("Raycast‚ÌRange")] float _raycastDistance = 50f;
     [SerializeField, Header("Æ€‚ÌImage")] Image _crosshairImage;
 
     private void Update()

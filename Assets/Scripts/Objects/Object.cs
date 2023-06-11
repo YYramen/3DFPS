@@ -33,9 +33,6 @@ public class Object : MonoBehaviour
     [SerializeField, Header("オブジェクトを引っ張る力")]
     float _pullPower;
 
-    [SerializeField, Header("Playerのオブジェクト")]
-    GameObject _playerObj;
-
     [Tooltip("銃と接続しているかどうか")]
     bool _isConnected = false;
 
@@ -62,23 +59,6 @@ public class Object : MonoBehaviour
             case ObjectType.PullObj:
                 this.gameObject.GetComponent<Renderer>().material = _pullObjMaterials;
                 break;
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(_objType == ObjectType.None || _objType == ObjectType.NomalObj)
-        {
-            return;
-        }
-
-        if(_objType == ObjectType.GrapObj && collision.gameObject.layer == LayerMask.NameToLayer("GrapBullet"))
-        {
-
-        }
-        else if (_objType == ObjectType.PullObj && collision.gameObject.layer == LayerMask.NameToLayer("PullBullet"))
-        {
-
         }
     }
 }

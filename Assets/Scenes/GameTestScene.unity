@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-23830
+  m_Name: pb_Mesh-2248
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -815,11 +815,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3312579400557279806, guid: ad40b2841093ec74aa05025437fa0102, type: 3}
   m_PrefabInstance: {fileID: 3312579399591726027}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1209684064 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2453064818690143134, guid: 41ee22c9f979889428f6facb02793887, type: 3}
-  m_PrefabInstance: {fileID: 1814003818}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1245775147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2453064818690143133, guid: 41ee22c9f979889428f6facb02793887, type: 3}
@@ -1104,7 +1099,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560573837}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.19, y: 1.97, z: 5.04}
+  m_LocalPosition: {x: 0.19, y: 4, z: 5.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1125,7 +1120,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!114 &1560573843
 MonoBehaviour:
@@ -1145,7 +1140,6 @@ MonoBehaviour:
   _objType: 2
   _grapPower: 0
   _pullPower: 0
-  _playerObj: {fileID: 1209684064}
 --- !u!1001 &1814003818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1153,11 +1147,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 132326886}
     m_Modifications:
-    - target: {fileID: 1635622815, guid: 41ee22c9f979889428f6facb02793887, type: 3}
+    - target: {fileID: 1160405584793822473, guid: 41ee22c9f979889428f6facb02793887, type: 3}
       propertyPath: _playerInput
       value: 
       objectReference: {fileID: 128016020}
-    - target: {fileID: 1160405584793822473, guid: 41ee22c9f979889428f6facb02793887, type: 3}
+    - target: {fileID: 2284483855117719605, guid: 41ee22c9f979889428f6facb02793887, type: 3}
       propertyPath: _playerInput
       value: 
       objectReference: {fileID: 128016020}
@@ -1171,7 +1165,7 @@ PrefabInstance:
       objectReference: {fileID: 91094607}
     - target: {fileID: 2453064818560391027, guid: 41ee22c9f979889428f6facb02793887, type: 3}
       propertyPath: m_VersionIndex
-      value: 810
+      value: 840
       objectReference: {fileID: 0}
     - target: {fileID: 2453064818690143133, guid: 41ee22c9f979889428f6facb02793887, type: 3}
       propertyPath: m_RootOrder
@@ -1221,10 +1215,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (Move With Input System)
       objectReference: {fileID: 0}
-    - target: {fileID: 2453064818904292395, guid: 41ee22c9f979889428f6facb02793887, type: 3}
-      propertyPath: _playerInput
-      value: 
-      objectReference: {fileID: 128016020}
     - target: {fileID: 2453064818904292396, guid: 41ee22c9f979889428f6facb02793887, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1235,8 +1225,12 @@ PrefabInstance:
       objectReference: {fileID: 1814487139}
     - target: {fileID: 2453064818904292398, guid: 41ee22c9f979889428f6facb02793887, type: 3}
       propertyPath: m_VersionIndex
-      value: 275
+      value: 305
       objectReference: {fileID: 0}
+    - target: {fileID: 4389080558111469500, guid: 41ee22c9f979889428f6facb02793887, type: 3}
+      propertyPath: _playerInput
+      value: 
+      objectReference: {fileID: 128016020}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41ee22c9f979889428f6facb02793887, type: 3}
 --- !u!43 &1814487139
@@ -1245,7 +1239,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-23860
+  m_Name: pb_Mesh-2278
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1536,7 +1530,6 @@ MonoBehaviour:
   _objType: 1
   _grapPower: 0
   _pullPower: 0
-  _playerObj: {fileID: 1209684064}
 --- !u!1 &1932416256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,7 +1663,6 @@ MonoBehaviour:
   _objType: 3
   _grapPower: 0
   _pullPower: 0
-  _playerObj: {fileID: 1209684064}
 --- !u!1 &1938707832 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2453064819785219843, guid: 41ee22c9f979889428f6facb02793887, type: 3}
