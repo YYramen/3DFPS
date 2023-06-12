@@ -474,7 +474,7 @@ Transform:
   m_GameObject: {fileID: 372405750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 1, z: 2.5}
+  m_LocalScale: {x: 5, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 756900919}
@@ -1165,8 +1165,6 @@ MonoBehaviour:
   _pullObjMaterials: {fileID: 2100000, guid: 5f7d442a5e40e884b980564019ab12a8, type: 2}
   _nomalObjMaterials: {fileID: 2100000, guid: f768133664132334e9eb38afd43e4c9a, type: 2}
   _objType: 2
-  _grapPower: 0
-  _pullPower: 0
 --- !u!1001 &1814003818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1184,6 +1182,11 @@ PrefabInstance:
       propertyPath: _playerInput
       value: 
       objectReference: {fileID: 128016020}
+    - target: {fileID: 2284483855117719605, guid: 41ee22c9f979889428f6facb02793887,
+        type: 3}
+      propertyPath: _grapGunRange
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2453064818560391024, guid: 41ee22c9f979889428f6facb02793887,
         type: 3}
       propertyPath: m_Mesh
@@ -1197,7 +1200,7 @@ PrefabInstance:
     - target: {fileID: 2453064818560391027, guid: 41ee22c9f979889428f6facb02793887,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 876
+      value: 882
       objectReference: {fileID: 0}
     - target: {fileID: 2453064818690143133, guid: 41ee22c9f979889428f6facb02793887,
         type: 3}
@@ -1272,7 +1275,12 @@ PrefabInstance:
     - target: {fileID: 2453064818904292398, guid: 41ee22c9f979889428f6facb02793887,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 341
+      value: 347
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389080558111469500, guid: 41ee22c9f979889428f6facb02793887,
+        type: 3}
+      propertyPath: _pullPower
+      value: 1.16
       objectReference: {fileID: 0}
     - target: {fileID: 4389080558111469500, guid: 41ee22c9f979889428f6facb02793887,
         type: 3}
@@ -1576,8 +1584,6 @@ MonoBehaviour:
   _pullObjMaterials: {fileID: 2100000, guid: 5f7d442a5e40e884b980564019ab12a8, type: 2}
   _nomalObjMaterials: {fileID: 2100000, guid: f768133664132334e9eb38afd43e4c9a, type: 2}
   _objType: 1
-  _grapPower: 0
-  _pullPower: 0
 --- !u!1 &1932416256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,8 +1715,6 @@ MonoBehaviour:
   _pullObjMaterials: {fileID: 2100000, guid: 5f7d442a5e40e884b980564019ab12a8, type: 2}
   _nomalObjMaterials: {fileID: 2100000, guid: f768133664132334e9eb38afd43e4c9a, type: 2}
   _objType: 3
-  _grapPower: 0
-  _pullPower: 0
 --- !u!1 &1938707832 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2453064819785219843, guid: 41ee22c9f979889428f6facb02793887,

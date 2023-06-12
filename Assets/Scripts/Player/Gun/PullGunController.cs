@@ -18,6 +18,9 @@ public class PullGunController : MonoBehaviour
     [SerializeField, Header("PullGunの引っ張る力")]
     float _pullPower = 0f;
 
+    [SerializeField, Header("ゴッドモード（PullGunの射程無限）")]
+    bool _godMode = false;
+
     [Header("参照用")]
     [SerializeField] PlayerInput _playerInput;
 
@@ -47,6 +50,10 @@ public class PullGunController : MonoBehaviour
     private void FirePullBullet()
     {
         Debug.Log("Pullgun fired");
+        if (_godMode)
+        {
+            _pullGunRange += 100f;
+        }
         Instantiate(_pullBulletObj, transform.position,
             Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
 
@@ -64,7 +71,8 @@ public class PullGunController : MonoBehaviour
 
     void Pull(RaycastHit target)
     {
-        
+        Vector3 dir = transform.position - target.transform.position;
+        target.rigidbody.AddForce(dir * _pullPower, ForceMode.Impulse);
 
         Debug.Log("Pull 成功");
     }

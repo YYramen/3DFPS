@@ -18,6 +18,9 @@ public class GrapGunController : MonoBehaviour
     [SerializeField, Header("GrapGunの引っ張る力")]
     float _grapPower;
 
+    [SerializeField, Header("ゴッドモード(GrapGunの射程無限)")]
+    bool _godMode = false;
+
     [Header("参照用")]
     [SerializeField] PlayerInput _playerInput;
 
@@ -58,6 +61,11 @@ public class GrapGunController : MonoBehaviour
     private void FireGrapBullet()
     {
         Debug.Log("Grapgun fired");
+        if (_godMode)
+        {
+            _grapGunRange += 100f;
+        }
+
         Instantiate(_grapBulletObj, transform.position,
             Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
 
@@ -78,13 +86,14 @@ public class GrapGunController : MonoBehaviour
     {
 
         PlayerStateController.Instance.ChangePlayerState(PlayerState.Grap);
+
         _rb.velocity = Vector3.zero;
         Vector3 dir = target.transform.position - transform.position;
         _rb.AddForce(dir * _grapPower, ForceMode.Impulse);
 
         Debug.Log("Grap成功");
         StartCoroutine(EndGrapple());
-        
+
     }
 
     IEnumerator EndGrapple()

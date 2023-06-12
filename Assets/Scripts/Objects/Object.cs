@@ -25,19 +25,6 @@ public class Object : MonoBehaviour
     [SerializeField, Header("オブジェクトの種類")]
     ObjectType _objType;
 
-    [Header("グラップオブジェクトの設定")]
-    [SerializeField, Header("プレイヤーを引っ張る力")]
-    float _grapPower;
-
-    [Header("プルオブジェクトの設定")]
-    [SerializeField, Header("オブジェクトを引っ張る力")]
-    float _pullPower;
-
-    [Tooltip("銃と接続しているかどうか")]
-    bool _isConnected = false;
-
-    public bool IsConnected { get => _isConnected; }
-
     private void Start()
     {
         ObjectInitialize();
@@ -58,7 +45,6 @@ public class Object : MonoBehaviour
                 break;
             case ObjectType.PullObj:
                 this.gameObject.GetComponent<Renderer>().material = _pullObjMaterials;
-                this.gameObject.AddComponent<SpringJoint>();
                 break;
         }
     }
