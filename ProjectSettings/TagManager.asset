@@ -13,7 +13,7 @@ TagManager:
   - UI
   - GrapObject
   - PullObject
-  - Object
+  - NomalObject
   - GrapBullet
   - PullBullet
   - 
