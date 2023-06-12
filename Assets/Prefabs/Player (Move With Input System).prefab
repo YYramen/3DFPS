@@ -6958,7 +6958,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 852
+  m_VersionIndex: 855
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8410,7 +8410,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 317
+  m_VersionIndex: 320
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8448,8 +8448,8 @@ MonoBehaviour:
   _muzzle: {fileID: 2453064818828187539}
   _pullBulletObj: {fileID: 3427737933391237607, guid: 17e84ff80b6570b479c813fac6c2fb26,
     type: 3}
-  _pullGunRange: 50
-  _pullPower: 0
+  _pullGunRange: 10
+  _pullPower: 10
   _playerInput: {fileID: 0}
 --- !u!1 &2453064819785219843
 GameObject:
