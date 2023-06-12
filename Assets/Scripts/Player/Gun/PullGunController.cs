@@ -12,6 +12,12 @@ public class PullGunController : MonoBehaviour
     [SerializeField, Header("PullBullet‚ÌGameObject")]
     GameObject _pullBulletObj;
 
+    [SerializeField, Header("PullGun‚ÌÅ‘åË’ö")]
+    float _pullGunRange = 50f;
+
+    [SerializeField, Header("PullGun‚Ìˆø‚Á’£‚é—Í")]
+    float _pullPower = 0f;
+
     [Header("QÆ—p")]
     [SerializeField] PlayerInput _playerInput;
 
@@ -43,5 +49,21 @@ public class PullGunController : MonoBehaviour
         Debug.Log("Pullgun fired");
         Instantiate(_pullBulletObj, transform.position,
             Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, _pullGunRange, LayerMask.GetMask("PullObject")))
+        {
+            Pull();
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    void Pull()
+    {
+        Debug.Log("Pull ¬Œ÷");
     }
 }

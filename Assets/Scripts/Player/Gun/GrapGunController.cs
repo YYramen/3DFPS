@@ -62,9 +62,7 @@ public class GrapGunController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, _grapGunRange, LayerMask.GetMask("GrapObject")))
         {
-            
-
-            Debug.Log("Grapê¨å˜");
+            Grap(hit);
         }
         else
         {
@@ -72,8 +70,14 @@ public class GrapGunController : MonoBehaviour
         }
     }
 
-    void Grap()
+    void Grap(RaycastHit target)
     {
+        var spring = gameObject.GetComponentInParent<SpringJoint>();
+        spring.autoConfigureConnectedAnchor = false;
+        spring.connectedBody = target.transform.gameObject.GetComponent<Rigidbody>();
+        spring.connectedAnchor = target.transform.InverseTransformPoint(target.point);
 
+
+        Debug.Log("Grapê¨å˜");
     }
 }
