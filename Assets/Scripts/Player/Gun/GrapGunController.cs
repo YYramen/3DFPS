@@ -18,15 +18,8 @@ public class GrapGunController : MonoBehaviour
     [SerializeField, Header("GrapGun‚Ìˆø‚Á’£‚é—Í")]
     float _grapPower;
 
-    Rigidbody _rb;
-
     [Header("QÆ—p")]
     [SerializeField] PlayerInput _playerInput;
-
-    private void Start()
-    {
-        _rb = GetComponentInParent<Rigidbody>();
-    }
 
     private void OnEnable()
     {
@@ -76,7 +69,8 @@ public class GrapGunController : MonoBehaviour
         spring.autoConfigureConnectedAnchor = false;
         spring.connectedBody = target.transform.gameObject.GetComponent<Rigidbody>();
         spring.connectedAnchor = target.transform.InverseTransformPoint(target.point);
-
+        spring.spring = _grapPower;
+        spring.maxDistance = _grapGunRange;
 
         Debug.Log("Grap¬Œ÷");
     }

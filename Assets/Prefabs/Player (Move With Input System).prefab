@@ -6958,7 +6958,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 849
+  m_VersionIndex: 852
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8410,7 +8410,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 314
+  m_VersionIndex: 317
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8430,8 +8430,8 @@ MonoBehaviour:
   _muzzle: {fileID: 2453064818828187539}
   _grapBulletObj: {fileID: 3427737933391237607, guid: 2b267cfdf3fe9c5489098824b7ac115a,
     type: 3}
-  _grapGunRange: 50
-  _grapPower: 100
+  _grapGunRange: 10
+  _grapPower: 10
   _playerInput: {fileID: 0}
 --- !u!114 &4389080558111469500
 MonoBehaviour:
