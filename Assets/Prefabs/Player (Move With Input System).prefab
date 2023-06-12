@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2453064818560391026}
   - component: {fileID: 2453064818560391038}
   - component: {fileID: 1160405584793822473}
-  - component: {fileID: 596416208}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -6958,7 +6957,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 855
+  m_VersionIndex: 873
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7007,30 +7006,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 1.75
   _playerInput: {fileID: 0}
---- !u!145 &596416208
-SpringJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2453064818560391028}
-  m_ConnectedBody: {fileID: 0}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 2, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  serializedVersion: 2
-  m_Spring: 10
-  m_Damper: 0.2
-  m_MinDistance: 0
-  m_MaxDistance: 0
-  m_Tolerance: 0.025
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!1 &2453064818690143134
 GameObject:
   m_ObjectHideFlags: 0
@@ -8410,7 +8385,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 320
+  m_VersionIndex: 338
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8431,7 +8406,7 @@ MonoBehaviour:
   _grapBulletObj: {fileID: 3427737933391237607, guid: 2b267cfdf3fe9c5489098824b7ac115a,
     type: 3}
   _grapGunRange: 10
-  _grapPower: 10
+  _grapPower: 1.64
   _playerInput: {fileID: 0}
 --- !u!114 &4389080558111469500
 MonoBehaviour:
