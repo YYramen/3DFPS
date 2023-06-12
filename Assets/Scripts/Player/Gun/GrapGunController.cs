@@ -62,8 +62,7 @@ public class GrapGunController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, _grapGunRange, LayerMask.GetMask("GrapObject")))
         {
-            var dir = (hit.transform.position - this.transform.position).normalized; ;
-            _rb.AddForce(dir * _grapPower, ForceMode.Impulse);
+            
 
             Debug.Log("Grapê¨å˜");
         }
@@ -71,5 +70,10 @@ public class GrapGunController : MonoBehaviour
         {
             return;
         }
+    }
+
+    void Grap()
+    {
+
     }
 }
