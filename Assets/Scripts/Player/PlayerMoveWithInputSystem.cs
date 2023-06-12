@@ -10,6 +10,8 @@ public class PlayerMoveWithInputSystem : MonoBehaviour
 
     [SerializeField, Header("参照用")] PlayerInput _playerInput;
 
+
+
     Rigidbody _rb;
     Vector3 _movement;
 
@@ -39,13 +41,14 @@ public class PlayerMoveWithInputSystem : MonoBehaviour
 
     void Update()
     {
-        //_rb.velocity = _movement * _moveSpeed;
-
+        
         // カメラの方向から、X-Z平面の単位ベクトルを取得
         Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
 
         // 方向キーの入力値とカメラの向きから、移動方向を決定
         Vector3 moveForward = cameraForward * _movement.y + Camera.main.transform.right * _movement.x;
+
+        if (PlayerStateController.Instance.State != PlayerState.Move) return;
 
         // 移動方向にスピードを掛ける。ジャンプや落下がある場合は、別途Y軸方向の速度ベクトルを足す。
         _rb.velocity = moveForward * _moveSpeed + new Vector3(0, _rb.velocity.y, 0);

@@ -64,10 +64,7 @@ public class PullGunController : MonoBehaviour
 
     void Pull(RaycastHit target)
     {
-        var spring = gameObject.GetComponentInParent<SpringJoint>();
-        spring.autoConfigureConnectedAnchor = false;
-        spring.connectedBody = this.transform.gameObject.GetComponent<Rigidbody>();
-        spring.connectedAnchor = target.transform.InverseTransformPoint(target.point);
+        
 
         Debug.Log("Pull ê¨å˜");
     }

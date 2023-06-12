@@ -21,6 +21,13 @@ public class GrapGunController : MonoBehaviour
     [Header("éQè∆óp")]
     [SerializeField] PlayerInput _playerInput;
 
+    Rigidbody _rb;
+
+    private void Start()
+    {
+        _rb = GetComponentInParent<Rigidbody>();
+    }
+
     private void OnEnable()
     {
         _playerInput.onActionTriggered += OnHold;
@@ -69,13 +76,20 @@ public class GrapGunController : MonoBehaviour
 
     void Grap(RaycastHit target)
     {
-        var spring = gameObject.GetComponentInParent<SpringJoint>();
-        spring.autoConfigureConnectedAnchor = false;
-        spring.connectedBody = target.transform.gameObject.GetComponent<Rigidbody>();
-        spring.connectedAnchor = target.transform.InverseTransformPoint(target.point);
-        spring.spring = _grapPower;
-        spring.maxDistance = _grapGunRange;
+
+        PlayerStateController.Instance.ChangePlayerState(PlayerState.Grap);
+        _rb.velocity = Vector3.zero;
+        Vector3 dir = target.transform.position - transform.position;
+        _rb.AddForce(dir * _grapPower, ForceMode.Impulse);
 
         Debug.Log("Grapê¨å˜");
+        StartCoroutine(EndGrapple());
+        
+    }
+
+    IEnumerator EndGrapple()
+    {
+        yield return new WaitForSeconds(1.5f);
+        PlayerStateController.Instance.ChangePlayerState(PlayerState.Move);
     }
 }
