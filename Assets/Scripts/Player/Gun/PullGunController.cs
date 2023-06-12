@@ -54,7 +54,7 @@ public class PullGunController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, _pullGunRange, LayerMask.GetMask("PullObject")))
         {
-            Pull();
+            Pull(hit);
         }
         else
         {
@@ -62,8 +62,13 @@ public class PullGunController : MonoBehaviour
         }
     }
 
-    void Pull()
+    void Pull(RaycastHit target)
     {
+        var spring = gameObject.GetComponentInParent<SpringJoint>();
+        spring.autoConfigureConnectedAnchor = false;
+        spring.connectedBody = this.transform.gameObject.GetComponent<Rigidbody>();
+        spring.connectedAnchor = target.transform.InverseTransformPoint(target.point);
+
         Debug.Log("Pull ê¨å˜");
     }
 }

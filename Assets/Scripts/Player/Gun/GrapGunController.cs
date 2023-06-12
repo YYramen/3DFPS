@@ -42,6 +42,10 @@ public class GrapGunController : MonoBehaviour
         {
             FireGrapBullet();
         }
+        else
+        {
+            return;
+        }
     }
 
     private void FireGrapBullet()

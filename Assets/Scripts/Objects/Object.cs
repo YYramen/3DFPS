@@ -58,6 +58,7 @@ public class Object : MonoBehaviour
                 break;
             case ObjectType.PullObj:
                 this.gameObject.GetComponent<Renderer>().material = _pullObjMaterials;
+                this.gameObject.AddComponent<SpringJoint>();
                 break;
         }
     }
