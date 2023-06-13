@@ -19,7 +19,6 @@ public class MouseCursorControll : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
 
-
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 

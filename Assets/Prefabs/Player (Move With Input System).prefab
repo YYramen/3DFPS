@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 451115609}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6958,7 +6958,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 915
+  m_VersionIndex: 921
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7036,7 +7036,7 @@ GameObject:
   - component: {fileID: 2453064818690143133}
   m_Layer: 0
   m_Name: Player (Move With Input System)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8404,7 +8404,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 380
+  m_VersionIndex: 386
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8425,7 +8425,7 @@ MonoBehaviour:
   _grapWireObj: {fileID: 5114965831637550052, guid: a5d6fc74c3dc97f4fb8f5b9a3702c74b,
     type: 3}
   _grapGunRange: 5
-  _grapPower: 2
+  _grapPower: 4
   _waitTime: 0.75
   _godMode: 0
   _playerInput: {fileID: 0}
