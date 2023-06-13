@@ -24,7 +24,7 @@ public class GamePause : MonoBehaviour
 
     private void Start()
     {
-        if(_isPaused == true)
+        if (_isPaused == true)
         {
             _isPaused = false;
         }
@@ -34,28 +34,20 @@ public class GamePause : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            _isPaused = !_isPaused;
-            if(_isPaused)
-            {
-                PauseGame();
-            }
-            else
-            {
-                ResumeGame();
-            }
+            PauseGame();
         }
-
-        //Cursor.visible = _isPaused;
     }
 
     public void ResumeGame()
     {
+        _isPaused = false;
         _pausePanel.SetActive(false);
         Time.timeScale = 1;
     }
 
     public void PauseGame()
     {
+        _isPaused = true;
         _pausePanel.SetActive(true);
         Time.timeScale = 0;
     }

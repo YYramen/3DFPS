@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
+using UnityEngine.UI;
 
 public class RebindCompositInput : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class RebindCompositInput : MonoBehaviour
 
     [SerializeField, Header("リバインド対象のScheme")] private string _scheme = "KeyboardMouse";
 
-    [SerializeField, Header("現在のBindを表示するテキスト")] private TMP_Text _pathText;
+    [SerializeField, Header("現在のBindを表示するテキスト")] private Text _pathText;
 
     [SerializeField, Header("リバインド中のマスク用オブジェクト")] private GameObject _mask;
 

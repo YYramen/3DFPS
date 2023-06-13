@@ -12,12 +12,24 @@ public class MouseCursorControll : MonoBehaviour
     [SerializeField, Header("PullGunコンポーネント")]
     PullGunController _pGun;
 
+    [SerializeField, Header("GamePauseコンポーネント")]
+    GamePause _gamePause;
+
     [SerializeField, Header("照準のImage")] 
     Image _crosshairImage;
 
     private void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        if (_gamePause.IsPaused)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else if (_gamePause.IsPaused == false)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;

@@ -91,4 +91,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gGun: {fileID: 0}
   _pGun: {fileID: 0}
+  _gamePause: {fileID: 0}
   _crosshairImage: {fileID: 1285721189301182497}
