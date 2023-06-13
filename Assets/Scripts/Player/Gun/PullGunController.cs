@@ -9,8 +9,11 @@ public class PullGunController : MonoBehaviour
     [SerializeField, Header("Muzzleの位置")]
     Transform _muzzle;
 
-    [SerializeField, Header("PullBulletのGameObject")]
-    GameObject _pullBulletObj;
+    [SerializeField, Header("PullWireのGameObject")]
+    GameObject _pullWireObj;
+
+    [Tooltip("Wireの頂点（の配列）")]
+    Vector3[] _wirePos = new Vector3[2];
 
     [SerializeField, Header("PullGunの最大射程")]
     float _pullGunRange = 50f;
@@ -23,6 +26,8 @@ public class PullGunController : MonoBehaviour
 
     [Header("参照用")]
     [SerializeField] PlayerInput _playerInput;
+
+    public float PullGunRange { get => _pullGunRange;}
 
     private void OnEnable()
     {
@@ -54,12 +59,10 @@ public class PullGunController : MonoBehaviour
         {
             _pullGunRange += 100f;
         }
-        Instantiate(_pullBulletObj, transform.position,
-            Quaternion.Euler(transform.parent.eulerAngles.x, transform.parent.eulerAngles.y, 0));
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, _pullGunRange, LayerMask.GetMask("PullObject")))
+        if (Physics.Raycast(ray, out hit, PullGunRange, LayerMask.GetMask("PullObject")))
         {
             Pull(hit);
         }
@@ -73,6 +76,13 @@ public class PullGunController : MonoBehaviour
     {
         Vector3 dir = transform.position - target.transform.position;
         target.rigidbody.AddForce(dir * _pullPower, ForceMode.Impulse);
+
+        //PullWireを生成
+        var wire = Instantiate(_pullWireObj, _muzzle.transform.position, Quaternion.identity, _muzzle.transform.parent);
+        LineRenderer line = wire.GetComponent<LineRenderer>();
+        _wirePos[0] = _muzzle.transform.position;
+        _wirePos[1] = target.transform.position;
+        line.SetPositions(_wirePos);
 
         Debug.Log("Pull 成功");
     }

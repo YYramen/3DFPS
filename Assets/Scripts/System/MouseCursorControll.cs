@@ -6,8 +6,14 @@ using UnityEngine.UI;
 
 public class MouseCursorControll : MonoBehaviour
 {
-    [SerializeField, Header("RaycastのRange")] float _raycastDistance = 50f;
-    [SerializeField, Header("照準のImage")] Image _crosshairImage;
+    [SerializeField, Header("GrapGunコンポーネント")] 
+    GrapGunController _gGun;
+
+    [SerializeField, Header("PullGunコンポーネント")]
+    PullGunController _pGun;
+
+    [SerializeField, Header("照準のImage")] 
+    Image _crosshairImage;
 
     private void Update()
     {
@@ -17,11 +23,11 @@ public class MouseCursorControll : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, _raycastDistance, LayerMask.GetMask("GrapObject")))
+        if (Physics.Raycast(ray, out hit, _gGun.GrapGunRange, LayerMask.GetMask("GrapObject")))
         {
             _crosshairImage.color = Color.blue;
         }
-        else if ((Physics.Raycast(ray, out hit, _raycastDistance, LayerMask.GetMask("PullObject"))))
+        else if ((Physics.Raycast(ray, out hit, _pGun.PullGunRange, LayerMask.GetMask("PullObject"))))
         {
             _crosshairImage.color = Color.red;
         }

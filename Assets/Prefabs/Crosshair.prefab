@@ -89,5 +89,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c405a31189c8e84d9ef13d52c6cd540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _raycastDistance: 100
+  _gGun: {fileID: 0}
+  _pGun: {fileID: 0}
   _crosshairImage: {fileID: 1285721189301182497}

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2453064818560391026}
   - component: {fileID: 2453064818560391038}
   - component: {fileID: 1160405584793822473}
+  - component: {fileID: 451115609}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -6957,7 +6958,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 885
+  m_VersionIndex: 912
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7005,6 +7006,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 1.75
+  _playerInput: {fileID: 0}
+--- !u!114 &451115609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453064818560391028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1d93b4fbd3ecf44b34376c10f169a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpPower: 300
+  _groundCheckRadius: 0.8
+  _groundCheckOffsetY: 1.25
+  _groundCheckDistance: 0.8
+  _waitTime: 0.1
   _playerInput: {fileID: 0}
 --- !u!1 &2453064818690143134
 GameObject:
@@ -8385,7 +8404,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 350
+  m_VersionIndex: 377
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8403,10 +8422,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _muzzle: {fileID: 2453064818828187539}
-  _grapBulletObj: {fileID: 3427737933391237607, guid: 2b267cfdf3fe9c5489098824b7ac115a,
+  _grapWireObj: {fileID: 5114965831637550052, guid: a5d6fc74c3dc97f4fb8f5b9a3702c74b,
     type: 3}
-  _grapGunRange: 20
-  _grapPower: 1.64
+  _grapGunRange: 5
+  _grapPower: 2
+  _waitTime: 0.75
   _godMode: 0
   _playerInput: {fileID: 0}
 --- !u!114 &4389080558111469500
@@ -8422,10 +8442,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _muzzle: {fileID: 2453064818828187539}
-  _pullBulletObj: {fileID: 3427737933391237607, guid: 17e84ff80b6570b479c813fac6c2fb26,
+  _pullWireObj: {fileID: 5114965831637550052, guid: 247c464a6029eb24085db958bbb7b2ab,
     type: 3}
-  _pullGunRange: 10
-  _pullPower: 1.16
+  _pullGunRange: 5
+  _pullPower: 2
   _godMode: 0
   _playerInput: {fileID: 0}
 --- !u!1 &2453064819785219843

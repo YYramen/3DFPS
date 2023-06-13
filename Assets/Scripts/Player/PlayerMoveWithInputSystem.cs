@@ -10,8 +10,6 @@ public class PlayerMoveWithInputSystem : MonoBehaviour
 
     [SerializeField, Header("éQè∆óp")] PlayerInput _playerInput;
 
-
-
     Rigidbody _rb;
     Vector3 _movement;
 

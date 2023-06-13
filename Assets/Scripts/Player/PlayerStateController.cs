@@ -7,6 +7,7 @@ public enum PlayerState
     None = 0,
     Move = 1,
     Grap = 2,
+    Jump = 3,
 }
 
 public class PlayerStateController

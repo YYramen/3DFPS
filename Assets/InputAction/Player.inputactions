@@ -20,7 +20,7 @@
                     "id": "b8d06fef-375b-4171-9ae2-38c68045e426",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
@@ -38,7 +38,16 @@
                     "id": "80cfd6bc-c023-405d-b22c-f3def2dc0f3e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "93dbc23e-954c-4500-813c-3501701ebd06",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 }
             ],
@@ -370,6 +379,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "AltFire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "142e5c0a-c24f-44c6-b09c-782a1448d8a3",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
