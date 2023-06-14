@@ -42,6 +42,10 @@ public class MouseCursorControll : MonoBehaviour
         {
             _crosshairImage.color = Color.red;
         }
+        else if(((Physics.Raycast(ray, out hit, _pGun.PullGunRange, LayerMask.GetMask("NomalObject")))))
+        {
+            _crosshairImage.color = Color.white;
+        }
         else
         {
             _crosshairImage.color = Color.white;

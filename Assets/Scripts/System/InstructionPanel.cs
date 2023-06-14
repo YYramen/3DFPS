@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using System.Linq;
 
 public class InstructionPanel : MonoBehaviour
 {
@@ -25,15 +25,16 @@ public class InstructionPanel : MonoBehaviour
     void SerchGamePad()
     {
         var controllerNames = Input.GetJoystickNames();
-        if(controllerNames[0] == "")
+
+        if (controllerNames[0] == "")
         {
             _keyMousePanel.SetActive(true);
             _gamePadPanel.SetActive(false);
         }
         else
         {
-            _gamePadPanel.SetActive(true);
             _keyMousePanel.SetActive(false);
+            _gamePadPanel.SetActive(true);
         }
     }
 }
