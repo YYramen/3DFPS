@@ -31,6 +31,8 @@ public class MouseCursorControll : MonoBehaviour
             Cursor.visible = false;
         }
 
+        if (Mathf.Approximately(Time.timeScale, 0f)) return;
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 

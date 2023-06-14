@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,9 @@ public class GamePause : MonoBehaviour
     [SerializeField, Header("Settingsオブジェクト")]
     GameObject _settingsObj;
 
+    [SerializeField, Header("cvcオブジェクト")]
+    GameObject _cvcObj;
+
     [SerializeField, Header("ポーズ中に非表示にするCrosshair")]
     Image _crosshairImage;
 
@@ -20,6 +24,8 @@ public class GamePause : MonoBehaviour
     [Tooltip("ポーズフラグ")]
     bool _isPaused = false;
 
+    CinemachinePOV _cvcPov;
+
     public bool IsPaused { get => _isPaused; }
 
     private void Start()
@@ -28,13 +34,24 @@ public class GamePause : MonoBehaviour
         {
             _isPaused = false;
         }
+
+        _cvcPov = _cvcObj.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachinePOV>();
     }
 
     private void Update()
     {
         if (Input.GetButtonDown("Cancel"))
         {
+            _isPaused = !_isPaused;
+        }
+
+        if (_isPaused)
+        {
             PauseGame();
+        }
+        else
+        {
+            ResumeGame();
         }
     }
 
@@ -42,6 +59,8 @@ public class GamePause : MonoBehaviour
     {
         _isPaused = false;
         _pausePanel.SetActive(false);
+        _cvcPov.m_HorizontalAxis.m_MaxSpeed = 1;
+        _cvcPov.m_VerticalAxis.m_MaxSpeed = 1;
         Time.timeScale = 1;
     }
 
@@ -49,6 +68,8 @@ public class GamePause : MonoBehaviour
     {
         _isPaused = true;
         _pausePanel.SetActive(true);
+        _cvcPov.m_HorizontalAxis.m_MaxSpeed = 0;
+        _cvcPov.m_VerticalAxis.m_MaxSpeed = 0;
         Time.timeScale = 0;
     }
 

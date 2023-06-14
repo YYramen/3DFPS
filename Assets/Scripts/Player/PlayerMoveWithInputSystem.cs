@@ -39,7 +39,8 @@ public class PlayerMoveWithInputSystem : MonoBehaviour
 
     void Update()
     {
-        
+        if (Mathf.Approximately(Time.timeScale, 0f)) return;
+
         // カメラの方向から、X-Z平面の単位ベクトルを取得
         Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
 
