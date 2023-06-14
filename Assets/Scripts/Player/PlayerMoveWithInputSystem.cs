@@ -47,7 +47,7 @@ public class PlayerMoveWithInputSystem : MonoBehaviour
         // 方向キーの入力値とカメラの向きから、移動方向を決定
         Vector3 moveForward = cameraForward * _movement.y + Camera.main.transform.right * _movement.x;
 
-        if (PlayerStateController.Instance.State != PlayerState.Move) return;
+        if (PlayerStateController.StateInstance.State != PlayerState.Move) return;
 
         // 移動方向にスピードを掛ける。ジャンプや落下がある場合は、別途Y軸方向の速度ベクトルを足す。
         _rb.velocity = moveForward * _moveSpeed + new Vector3(0, _rb.velocity.y, 0);

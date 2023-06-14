@@ -68,7 +68,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (!_isGrounded) return;
 
-        PlayerStateController.Instance.ChangePlayerState(PlayerState.Jump);
+        PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Jump);
         _rb.AddForce(_jumpPower * Vector3.up);
         StartCoroutine(ChangePlayerState());
         Debug.Log("Player Jumped");
@@ -83,7 +83,7 @@ public class PlayerJump : MonoBehaviour
     IEnumerator ChangePlayerState()
     {
         yield return new WaitForSeconds(_waitTime);
-        PlayerStateController.Instance.ChangePlayerState(PlayerState.Move);
+        PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Move);
         Debug.Log("Jump Ended");
     }
 }

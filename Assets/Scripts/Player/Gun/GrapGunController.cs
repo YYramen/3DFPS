@@ -85,7 +85,7 @@ public class GrapGunController : MonoBehaviour
 
     void Grap(RaycastHit target)
     {
-        PlayerStateController.Instance.ChangePlayerState(PlayerState.Grap);
+        PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Grap);
 
         // Grapèàóù
         _rb.velocity = Vector3.zero;
@@ -107,6 +107,6 @@ public class GrapGunController : MonoBehaviour
     {
         yield return new WaitForSeconds(_waitTime);
         Debug.Log("Grapple Ended");
-        PlayerStateController.Instance.ChangePlayerState(PlayerState.Move);
+        PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Move);
     }
 }

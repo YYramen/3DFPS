@@ -12,7 +12,7 @@ public enum PlayerState
 
 public class PlayerStateController
 {
-    public static  PlayerStateController Instance = new PlayerStateController();
+    public static  PlayerStateController StateInstance = new PlayerStateController();
 
     PlayerState _state = PlayerState.Move;
 
