@@ -26,7 +26,7 @@ public class InstructionPanel : MonoBehaviour
     {
         var controllerNames = Input.GetJoystickNames();
 
-        if (controllerNames[0] == "")
+        if (controllerNames.Length >= 0 && controllerNames != null)
         {
             _keyMousePanel.SetActive(true);
             _gamePadPanel.SetActive(false);

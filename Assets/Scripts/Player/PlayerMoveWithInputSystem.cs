@@ -6,7 +6,9 @@ using static UnityEngine.EventSystems.StandaloneInputModule;
 
 public class PlayerMoveWithInputSystem : MonoBehaviour
 {
-    [SerializeField, Header("移動速度")] float _moveSpeed;
+    [SerializeField, Header("移動速度(歩き)")] float _moveSpeed;
+
+    [SerializeField, Header("移動速度(走り)")] float _runSpeed;
 
     [SerializeField, Header("参照用")] PlayerInput _playerInput;
 
@@ -28,7 +30,7 @@ public class PlayerMoveWithInputSystem : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
-    public void OnMove(InputAction.CallbackContext context)
+    void OnMove(InputAction.CallbackContext context)
     {
         if (context.action.name != "Move")
             return;
@@ -47,7 +49,7 @@ public class PlayerMoveWithInputSystem : MonoBehaviour
         // 方向キーの入力値とカメラの向きから、移動方向を決定
         Vector3 moveForward = cameraForward * _movement.y + Camera.main.transform.right * _movement.x;
 
-        if (PlayerStateController.StateInstance.State != PlayerState.Move) return;
+        if (PlayerStateController.StateInstance.State == PlayerState.Inactive) return;
 
         // 移動方向にスピードを掛ける。ジャンプや落下がある場合は、別途Y軸方向の速度ベクトルを足す。
         _rb.velocity = moveForward * _moveSpeed + new Vector3(0, _rb.velocity.y, 0);

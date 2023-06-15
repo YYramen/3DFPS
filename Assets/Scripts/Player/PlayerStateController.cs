@@ -8,6 +8,8 @@ public enum PlayerState
     Move = 1,
     Grap = 2,
     Jump = 3,
+    WallRun = 4,
+    Inactive = 5,
 }
 
 public class PlayerStateController

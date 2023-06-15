@@ -56,7 +56,7 @@ public class GrapGunController : MonoBehaviour
             return;
         }
 
-        if (context.performed)
+        if (context.performed && PlayerStateController.StateInstance.State == PlayerState.Inactive)
         {
             FireGrapBullet();
         }
@@ -105,6 +105,7 @@ public class GrapGunController : MonoBehaviour
 
     IEnumerator EndGrapple()
     {
+        PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Inactive);
         yield return new WaitForSeconds(_waitTime);
         Debug.Log("Grapple Ended");
         PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Move);

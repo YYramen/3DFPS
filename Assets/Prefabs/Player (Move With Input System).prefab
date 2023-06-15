@@ -453,6 +453,7 @@ GameObject:
   - component: {fileID: 2453064818560391038}
   - component: {fileID: 1160405584793822473}
   - component: {fileID: 451115609}
+  - component: {fileID: 575473729}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Player
@@ -7395,7 +7396,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 960
+  m_VersionIndex: 972
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7410,8 +7411,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.62
+  m_Height: 2.23
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &2453064818560391038
@@ -7443,6 +7444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 2.5
+  _runSpeed: 0
   _playerInput: {fileID: 0}
 --- !u!114 &451115609
 MonoBehaviour:
@@ -7456,11 +7458,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1d93b4fbd3ecf44b34376c10f169a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpPower: 300
-  _groundCheckRadius: 0.8
-  _groundCheckOffsetY: 1.25
-  _groundCheckDistance: 0.8
+  _jumpPower: 600
+  _groundCheckOffsetY: 0.5
+  _groundCheckDistance: 1
   _waitTime: 0.1
+  _playerInput: {fileID: 0}
+--- !u!114 &575473729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453064818560391028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb141a25cf4fea6428efc65bfe396676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wallJumpPower: 10
+  _wallCheckOffsetY: 1
+  _wallLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  _wallCheckDistance: 1
+  _wallRunSpeed: 5
+  _wallRunTime: 1
+  _waitWallJumpTime: 0.2
+  _playerCameraTransform: {fileID: 2453064819785219842}
   _playerInput: {fileID: 0}
 --- !u!1 &2453064818690143134
 GameObject:
@@ -8841,7 +8865,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 425
+  m_VersionIndex: 437
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
