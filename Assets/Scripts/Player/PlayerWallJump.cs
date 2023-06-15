@@ -21,6 +21,9 @@ public class PlayerWallJump : MonoBehaviour
     [SerializeField, Header("WallRun時のプレイヤーの速度")]
     float _wallRunSpeed = 5f;
 
+    [SerializeField, Header("WallRun時のプレイヤーの速度倍率")]
+    float _wallRunSpeedMultiPlier = 2.0f;
+
     [SerializeField, Header("WallRunの時間")]
     float _wallRunTime = 1.0f;
 
@@ -115,7 +118,7 @@ public class PlayerWallJump : MonoBehaviour
             Debug.LogWarning("Something Wrong!!!");
         }
 
-        _rb.AddForce(jumpDir.normalized * _wallJumpPower, ForceMode.Impulse);
+        _rb.AddForce(jumpDir * _wallJumpPower, ForceMode.Impulse);
         DisableWallRun();
     }
 
@@ -169,7 +172,7 @@ public class PlayerWallJump : MonoBehaviour
         }
 
         dir.y = 0;
-        _rb.AddForce(dir.normalized * _wallRunSpeed, ForceMode.Acceleration);
+        _rb.AddForce(dir.normalized * _wallRunSpeed * _wallRunSpeedMultiPlier, ForceMode.Acceleration);
 
         //DisableWallRun();
     }
