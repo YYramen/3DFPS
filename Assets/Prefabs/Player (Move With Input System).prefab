@@ -7396,7 +7396,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 987
+  m_VersionIndex: 993
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7483,7 +7483,6 @@ MonoBehaviour:
   _wallRunSpeed: 10
   _wallRunSpeedMultiPlier: 2
   _wallRunTime: 1
-  _waitWallJumpTime: 0.2
   _playerCameraTransform: {fileID: 2453064819785219842}
   _playerInput: {fileID: 0}
 --- !u!1 &2453064818690143134
@@ -8865,7 +8864,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 452
+  m_VersionIndex: 458
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

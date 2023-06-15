@@ -27,9 +27,6 @@ public class PlayerWallJump : MonoBehaviour
     [SerializeField, Header("WallRunの時間")]
     float _wallRunTime = 1.0f;
 
-    [SerializeField, Header("WallJumpが出来ない時間")]
-    float _waitWallJumpTime = 0.2f;
-
     [SerializeField, Header("プレイヤーのカメラのTransform")]
     Transform _playerCameraTransform;
 
@@ -195,7 +192,7 @@ public class PlayerWallJump : MonoBehaviour
         _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
         PlayerStateController.StateInstance.ChangePlayerState(PlayerState.WallRun);
 
-        yield return new WaitForSeconds(_waitWallJumpTime);
+        yield return new WaitForSeconds(_wallRunTime);
 
         _isWall = true;
 
