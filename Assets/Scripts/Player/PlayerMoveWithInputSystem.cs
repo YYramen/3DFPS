@@ -8,6 +8,9 @@ public class PlayerMoveWithInputSystem : MonoBehaviour
 {
     [SerializeField, Header("移動速度(歩き)")] float _moveSpeed;
 
+    [SerializeField, Header("集中線パーティクルオブジェクト")]
+    GameObject _particleObj;
+
     [SerializeField, Header("参照用")] PlayerInput _playerInput;
 
     Rigidbody _rb;
