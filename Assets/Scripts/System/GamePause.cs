@@ -26,7 +26,7 @@ public class GamePause : MonoBehaviour
 
     CinemachinePOV _cvcPov;
 
-    public bool IsPaused { get => _isPaused; }
+    public bool IsPaused { get => _isPaused; set => _isPaused = value; }
 
     private void Start()
     {
@@ -42,10 +42,10 @@ public class GamePause : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            _isPaused = !_isPaused;
+            TogglePause();
         }
 
-        if (_isPaused)
+        if (IsPaused)
         {
             PauseGame();
         }
@@ -55,9 +55,13 @@ public class GamePause : MonoBehaviour
         }
     }
 
+    public void TogglePause()
+    {
+        _isPaused = !_isPaused;
+    }
+
     public void ResumeGame()
     {
-        _isPaused = false;
         _pausePanel.SetActive(false);
         _cvcPov.m_HorizontalAxis.m_MaxSpeed = 1;
         _cvcPov.m_VerticalAxis.m_MaxSpeed = 1;
@@ -66,7 +70,6 @@ public class GamePause : MonoBehaviour
 
     public void PauseGame()
     {
-        _isPaused = true;
         _pausePanel.SetActive(true);
         _cvcPov.m_HorizontalAxis.m_MaxSpeed = 0;
         _cvcPov.m_VerticalAxis.m_MaxSpeed = 0;
