@@ -4,11 +4,26 @@ using UnityEngine;
 
 public class GoalObject : MonoBehaviour
 {
+    [SerializeField, Header("全ステージクリア判定")]
+    bool _allClear = false;
+
+    [SerializeField, Header("GameSceneControllオブジェクト")]
+    GameSceneControll _gameSceneControll;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Goal");
+            if (_allClear)
+            {
+                Debug.Log("AllClear");
+                _gameSceneControll.AllClear();
+            }
+            else
+            {
+                Debug.Log("Goal");
+                _gameSceneControll.StageClear();
+            }
         }
     }
 }

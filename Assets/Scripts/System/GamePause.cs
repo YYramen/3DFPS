@@ -42,52 +42,50 @@ public class GamePause : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            TogglePause();
+            PauseGame();
         }
 
-        if (IsPaused)
+        if (_isPaused)
         {
-            PauseGame();
+            _cvcPov.m_HorizontalAxis.m_MaxSpeed = 0;
+            _cvcPov.m_VerticalAxis.m_MaxSpeed = 0;
+            Time.timeScale = 0;
         }
         else
         {
-            ResumeGame();
+            _cvcPov.m_HorizontalAxis.m_MaxSpeed = 1;
+            _cvcPov.m_VerticalAxis.m_MaxSpeed = 1;
+            Time.timeScale = 1;
         }
     }
 
-    public void TogglePause()
+    public void TogglePause(bool value)
     {
-        _isPaused = !_isPaused;
+        _isPaused = value;
     }
 
     public void ResumeGame()
     {
+        TogglePause(false);
         _pausePanel.SetActive(false);
-        _cvcPov.m_HorizontalAxis.m_MaxSpeed = 1;
-        _cvcPov.m_VerticalAxis.m_MaxSpeed = 1;
-        Time.timeScale = 1;
     }
 
     public void PauseGame()
     {
+        TogglePause(true);
         _pausePanel.SetActive(true);
-        _cvcPov.m_HorizontalAxis.m_MaxSpeed = 0;
-        _cvcPov.m_VerticalAxis.m_MaxSpeed = 0;
-        Time.timeScale = 0;
     }
 
     public void GoToSettings()
     {
         _pausePanel.SetActive(false);
         _settingsObj.SetActive(true);
-        Time.timeScale = 0;
     }
 
     public void ReturnToMainMenu()
     {
         _settingsObj.SetActive(false);
         _pausePanel.SetActive(true);
-        Time.timeScale = 0;
     }
 }
 
