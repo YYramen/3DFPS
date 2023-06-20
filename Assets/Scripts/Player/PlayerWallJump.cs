@@ -54,7 +54,7 @@ public class PlayerWallJump : MonoBehaviour
         if (context.action.name != "Jump")
             return;
 
-        if (_isWall == true && context.performed)
+        if (PlayerStateController.StateInstance.State == PlayerState.WallRun && context.performed)
         {
             _isWallJump = true;
         }
@@ -67,17 +67,12 @@ public class PlayerWallJump : MonoBehaviour
 
     private void Update()
     {
-        if(PlayerStateController.StateInstance.State == PlayerState.Jump)
+        if (CheckLeftWall() || CheckRightWall())
         {
-            if (CheckLeftWall() || CheckRightWall())
-            {
-                WallRun();
-            }
-            else
-            {
-                DisableWallRun();
-            }
+            WallRun();
         }
+
+        Debug.Log(PlayerStateController.StateInstance.State);
     }
 
     bool CheckRightWall()
@@ -101,12 +96,12 @@ public class PlayerWallJump : MonoBehaviour
 
         if (CheckRightWall())
         {
-            jumpDir = _hitRightWall.normal * 2 + transform.up;
+            jumpDir = _hitRightWall.normal * 2 + transform.up * 2;
 
         }
         else if (CheckLeftWall())
         {
-            jumpDir = _hitLeftWall.normal * 2 + transform.up;
+            jumpDir = _hitLeftWall.normal * 2 + transform.up * 2;
 
         }
         else
@@ -125,12 +120,14 @@ public class PlayerWallJump : MonoBehaviour
     /// <returns></returns>
     void WallRun()
     {
+        
         Debug.Log("Start WallRun");
 
         _rb.useGravity = false;
-        StartCoroutine(WallRunTime());
-        Vector3 dir = Vector3.zero;
+        if (!_isWall) StartCoroutine(WallRunTime());
 
+        Vector3 dir = Vector3.zero;
+        
         if (CheckRightWall())
         {
             if (_playerCameraTransform.transform.forward.z >= 0)
@@ -170,8 +167,6 @@ public class PlayerWallJump : MonoBehaviour
 
         dir.y = 0;
         _rb.AddForce(dir.normalized * _wallRunSpeed * _wallRunSpeedMultiPlier, ForceMode.Acceleration);
-
-        //DisableWallRun();
     }
 
     /// <summary>
@@ -180,21 +175,29 @@ public class PlayerWallJump : MonoBehaviour
     /// <returns></returns>
     void DisableWallRun()
     {
-        PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Inactive);
         _isWall = false;
         _isWallJump = false;
         _rb.useGravity = true;
-        PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Jump);
+        PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Move);
     }
 
     IEnumerator WallRunTime()
     {
+        _rb.useGravity = false;
         _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
         PlayerStateController.StateInstance.ChangePlayerState(PlayerState.WallRun);
+        _isWall = true;
+        Debug.Log("WallRun Now");
+
+        if (_isWallJump)
+        {
+            yield break;
+        }
+
 
         yield return new WaitForSeconds(_wallRunTime);
 
-        _isWall = true;
-
+        Debug.Log("WallRun End");
+        DisableWallRun();
     }
 }

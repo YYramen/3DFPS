@@ -12,6 +12,7 @@ public class DeadZone : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("GameOver");
+            AudioManager.AudioManagerInstance.PlaySE(AudioManager.SESoundData.SE.GameOver);
 
             _gameSceneControll.GameOver();
         }

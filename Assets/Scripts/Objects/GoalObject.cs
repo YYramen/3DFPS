@@ -17,11 +17,15 @@ public class GoalObject : MonoBehaviour
             if (_allClear)
             {
                 Debug.Log("AllClear");
+                AudioManager.AudioManagerInstance.PlaySE(AudioManager.SESoundData.SE.AllClear);
+
                 _gameSceneControll.AllClear();
             }
             else
             {
                 Debug.Log("Goal");
+                AudioManager.AudioManagerInstance.PlaySE(AudioManager.SESoundData.SE.StageClear);
+
                 _gameSceneControll.StageClear();
             }
         }

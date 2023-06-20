@@ -74,6 +74,8 @@ public class PullGunController : MonoBehaviour
 
     void Pull(RaycastHit target)
     {
+        AudioManager.AudioManagerInstance.PlaySE(AudioManager.SESoundData.SE.PullGun);
+
         Vector3 dir = transform.position - target.transform.position;
         target.rigidbody.AddForce(dir * _pullPower, ForceMode.Impulse);
 

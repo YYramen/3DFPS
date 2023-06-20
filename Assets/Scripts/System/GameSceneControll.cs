@@ -28,7 +28,7 @@ public class GameSceneControll : MonoBehaviour
     Image _fadePanel;
 
     [Tooltip("フェードインの速度")]
-    float _fadeSpeed = 0.002f;
+    float _fadeSpeed = 0.02f;
 
     float _colorAlpha = 0f;
 

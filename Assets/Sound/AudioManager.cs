@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance { get; private set; }
+    public static AudioManager AudioManagerInstance { get; private set; }
 
     [SerializeField] AudioSource _audioBGM;
     [SerializeField] AudioSource _audioSE;
@@ -20,14 +20,14 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance)
+        if (AudioManagerInstance)
         {
             Debug.LogWarning("AudioManager•¡”‚ ‚Á‚½‚½‚ß‘O‚Ì‚à‚Ì‚ğíœ");
             Destroy(this.gameObject);
             return;
         }
 
-        Instance = this;
+        AudioManagerInstance = this;
     }
 
     /// <summary>

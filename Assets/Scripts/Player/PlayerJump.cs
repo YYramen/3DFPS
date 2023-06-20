@@ -58,35 +58,43 @@ public class PlayerJump : MonoBehaviour
     {
         if (Mathf.Approximately(Time.timeScale, 0f)) return;
 
-        CheckGrounded();
+        //CheckGrounded();
 
-        Debug.Log(PlayerStateController.StateInstance.State);
+        //Debug.Log(PlayerStateController.StateInstance.State);
     }
 
     void Jump()
     {
-        PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Jump);
-        _rb.AddForce(_jumpPower * Vector3.up);
-        StartCoroutine(ChangePlayerState());
-        Debug.Log("Player Jumped");
+        if (CheckGrounded())
+        {
+            PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Jump);
+            _rb.AddForce(_jumpPower * Vector3.up);
+            StartCoroutine(ChangePlayerState());
+            AudioManager.AudioManagerInstance.PlaySE(AudioManager.SESoundData.SE.Jump);
+            Debug.Log("Player Jumped");
+        }
+        //PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Jump);
+        //_rb.AddForce(_jumpPower * Vector3.up);
+        //StartCoroutine(ChangePlayerState());
+        //AudioManager.AudioManagerInstance.PlaySE(AudioManager.SESoundData.SE.Jump);
+        //Debug.Log("Player Jumped");
     }
 
-    void CheckGrounded()
+    bool CheckGrounded()
     {
         if(Physics.Raycast(this.transform.position + _groundCheckOffsetY * Vector3.up,
             Vector3.down, out _hit, _groundCheckDistance))
         {
-            PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Move);
+            return true;
         }
         else
         {
-            PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Jump);
+            return false;
         }
     }
 
     IEnumerator ChangePlayerState()
-    {
-        PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Inactive);
+    {;
         yield return new WaitForSeconds(_waitTime);
         PlayerStateController.StateInstance.ChangePlayerState(PlayerState.Move);
         Debug.Log("Jump Ended");
